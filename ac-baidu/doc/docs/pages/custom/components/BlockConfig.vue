@@ -85,7 +85,7 @@ const BlockSaveName = 'ACBlockRules'
 
 window.webInterface = {
   async update() {
-    blockState.blockRuleList = await safeFunc(() => window.AC_GM_Interface.get(BlockSaveName, '[]'))
+    blockState.blockRuleList = await safeFunc(() => window.AC_GM_Interface.get(BlockSaveName, '[]'), [])
     Object.defineProperty(blockState.blockRuleList, 'acpush', { value: acpush })
     Object.defineProperty(blockState.blockRuleList, 'acremove', { value: acremove })
     updateLocked = true
